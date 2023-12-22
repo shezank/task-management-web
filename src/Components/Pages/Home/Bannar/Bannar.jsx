@@ -31,7 +31,7 @@ const Bannar = () => {
                        Now You Can Explore Your Task And You Can aslo Complete Your Taksk just Need to click a button then your can start your task
                     </p>
                     <div className="flex items-center">
-                        <Link>
+                        <Link to='/Dashboard/Home'>
                         <button className='inline-flex items-center justify-center h-12 px-6 mr-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-purple-400 hover:bg-purple-700 focus:shadow-outline focus:outline-none'>
                         Let's Explore
                         </button>

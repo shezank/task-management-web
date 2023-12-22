@@ -8,6 +8,9 @@ import Login from '../../Pages/Login/Login';
 import Register from '../../Pages/Register/Register';
 import ErrorPages from '../../Pages/ErrorPages/ErrorPages';
 import Dashboard from '../../Pages/Users/Dashboard/Dashboard';
+import BarHome from '../../Pages/Users/Components/BarHome';
+import TaskList from '../../Pages/Users/Components/TaskList';
+import TaskManagement from '../../Pages/Users/Components/TaskManagement';
 
   const Routers = createBrowserRouter([
     {
@@ -32,7 +35,17 @@ import Dashboard from '../../Pages/Users/Dashboard/Dashboard';
 
     {
       path:'/Dashboard',
-      element: <Dashboard></Dashboard>
+      element: <Dashboard></Dashboard>,
+      children:[
+        {
+          path: 'Home',
+          element: <BarHome></BarHome>
+        },
+        {
+          path: 'list',
+          element: <TaskManagement></TaskManagement>
+        }
+      ]
     }
   ]);
 

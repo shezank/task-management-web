@@ -9,8 +9,8 @@ const Sidebar = () => {
                 <h1 className='text-center text-2xl text-white'>Bistro Boss Dashboard</h1>
                 <ul className='menu space-y-5'>
                     { <>
-                        <li className='bg-slate-100 text-xl font-bold'><NavLink to='/dashboard/adminHome'> <FaHome></FaHome> Admin </NavLink></li>
-                        <li className='bg-slate-100 text-xl font-bold'><NavLink to='/dashboard/allparcel'> <FaBookOpen></FaBookOpen>Parcels</NavLink></li>
+                        <li className='bg-slate-100 text-xl font-bold'><NavLink to='/dashboard/Home'> <FaHome></FaHome> Dashboard </NavLink></li>
+                        <li className='bg-slate-100 text-xl font-bold'><NavLink to='/dashboard/list'> <FaBookOpen></FaBookOpen>Task List</NavLink></li>
                         <li className='bg-slate-100 text-xl font-bold'><NavLink to='/dashboard/deliverymans'> <FaRunning></FaRunning> Delivery Mans</NavLink></li>
                         <li className='bg-slate-100 text-xl font-bold'><NavLink to='/dashboard/allusers'> <FaUser></FaUser>Users</NavLink></li>
                         <hr />
