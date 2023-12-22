@@ -4,8 +4,6 @@ import { DragDropContext, Droppable } from 'react-beautiful-dnd';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import axios from 'axios';
-
-
 import Swal from 'sweetalert2';
 import TaskList from './TaskList';
 
@@ -14,7 +12,7 @@ import useAxiosPublic from '../../../Hooks/useAxiosPublic/useAxiosPublic';
 
 const TaskManagement = () => {
 
-  const axiosOpen = useAxiosPublic();
+  const axiosPublice = useAxiosPublic();
   const { user } = useContext(AuthContext);
   const [tasks, setTasks] = useState(['']);
 
@@ -27,7 +25,7 @@ const TaskManagement = () => {
 
   const fetchTasks = async () => {
     try {
-      const response = await axiosOpen.get(`/tasks?email=${user?.email}`);
+      const response = await axiosPublice.get(`/tasks?email=${user?.email}`);
       setTasks(response.data);
     } catch (error) {
       console.error('Error fetching tasks:', error);
@@ -45,7 +43,7 @@ const TaskManagement = () => {
     // Update task status when dragging to a different status
     if (sourceStatus !== destinationStatus) {
       try {
-        await axiosOpen.put(`/tasks/${taskId}`, {
+        await axiosPublice.put(`/tasks/${taskId}`, {
           status: destinationStatus,
         });
         if (destinationStatus == 'ongoing') {
@@ -78,7 +76,7 @@ const TaskManagement = () => {
         confirmButtonText: "Yes, delete it!"
       }).then(async (result) => {
         if (result.isConfirmed) {
-          await axiosOpen.delete(`/tasks/${taskId}`);
+          await axiosPublice.delete(`/tasks/${taskId}`);
           const remaining = tasks.filter(product => product._id !== taskId)
           setTasks(remaining);
           Swal.fire({
