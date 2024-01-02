@@ -1,5 +1,3 @@
-// src/components/TaskList.js
-
 import React from 'react';
 import { Draggable, Droppable } from 'react-beautiful-dnd';
 import { Link } from 'react-router-dom';
@@ -36,7 +34,7 @@ const TaskList = ({ title, tasks, status, onDeleteTask, onEditTask }) => {
                    <h3 className="text-lg font-semibold">{task.title}</h3>
                    <p className="text-sm">{task.description}</p>
                    <p className="text-xs mt-2"><strong>Priority</strong>: {task.priority}</p>
-                   <p className="text-xs mb-2"><strong>Deadline</strong>: {task.deadlines}</p>
+                   <p className="text-xs mb-2"><strong>Deadline</strong>: {task.deadline}</p>
                    <button className='btn btn-sm mr-2 btn-accent text-white' onClick={()=> handleDelete(task)}>Delete</button>
                    <Link to={`/dashboard/update-task/${task._id}`} className='btn btn-sm  btn-primary text-white'>Edit</Link>
                  </div>

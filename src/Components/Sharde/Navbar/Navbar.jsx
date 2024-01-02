@@ -4,10 +4,13 @@ import { Link } from 'react-router-dom';
 
 const Navbar = () => {
 
-    const { user } = useContext(AuthContext)
+    const { user, logout } = useContext(AuthContext)
 
     const navlinks = <>
         <Link to='/'><li><button>Home</button></li></Link>
+        <Link to='/dashboard'><li><button>Dashboard</button></li></Link>
+        <Link to='/dashboard/my-added-task'><li><button>My Task</button></li></Link>
+        <Link to='/dashboard/add-task'><li><button>Add Task</button></li></Link>
     </>
     return (
         <div>
